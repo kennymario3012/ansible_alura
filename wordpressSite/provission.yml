@@ -1,0 +1,11 @@
+---
+  - hosts: all
+    tasks:
+    - name: 'Instala pacotes do sistema operacional'
+      apt:
+        name:
+        - php5
+        - apache2
+        - libapache2-mod-php5
+        state: latest
+      become: yes
