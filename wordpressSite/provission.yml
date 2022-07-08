@@ -56,13 +56,6 @@
       notify:
         - restart apache2
       
-    # - name: 'Configure apache2 vHost'
-    #   copy:
-    #    src: 'files/000-default.conf'
-    #    dest: '/etc/apache2/sites-available/000-default.conf'
-    #   become: yes
-    #   notify: 
-    #    - restart apache2   
   - hosts: mysqldb
     handlers:
     - name: restart mysql
