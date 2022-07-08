@@ -1,0 +1,33 @@
+---
+- name: 'Instala pacotes do sistema operacional'
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600 #1 hora
+    name: ["mysql-server-5.7", "python3-mysqldb"]
+    state: latest
+  become: true
+- name: 'Criar usuario no MySQL'
+  mysql_user:
+    login_user: root
+    name: phpuser
+    password: pass
+    priv: '*.*:ALL'
+    host: '%'
+    state: present
+  become: true
+- name: Enable remote login to mysql
+  lineinfile:
+      path: /etc/mysql/mysql.conf.d/mysqld.cnf
+      regexp: '^bind-address'
+      line: 'bind-address = 0.0.0.0'
+      backup: yes
+  become: true
+  notify:
+      - restart mysql
+- name: 'Creat a new database'
+  mysql_db:
+    name: wordpress_db
+    login_user: phpuser
+    login_password: pass
+    login_host: 'localhost'
+    state: present

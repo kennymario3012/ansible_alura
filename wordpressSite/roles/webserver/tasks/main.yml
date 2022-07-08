@@ -1,0 +1,8 @@
+---
+- name: 'Instala pacotes do sistema operacional'
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600 #1 hora
+    name: ["php7.2","php7.2-mysql",'php7.2-gd',"apache2","libapache2-mod-php7.2"]
+    state: latest
+  become: true
