@@ -1,7 +1,6 @@
 ---
   - hosts: phpweb
     roles:
-      - webserver
       - wordpress
            
   - hosts: mysqldb
