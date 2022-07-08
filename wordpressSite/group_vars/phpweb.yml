@@ -1,6 +1,6 @@
 ---
-wp_username: wordpress_user
-wp_db_name: phpuser
+wp_username: phpuser
+wp_db_name: wordpress_db
 wp_user_password: pass
 wp_db_ip: 172.16.1.228
 wp_installation_dir: /var/www/wordpress
