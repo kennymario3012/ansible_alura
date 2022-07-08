@@ -1,6 +1,13 @@
-[mysqlserver]
-172.16.1.181
-[mysqlserver:vars]
+[mysqldb]
+172.16.1.228
+[mysqldb:vars]
+ansible_user=vagrant
+ansible_ssh_private_key_file=/home/mdadmin/Documents/STUDY/ALURA/DEVOPS/Vangrant/ambiente_dev/bionic/configs/keys/id_bionic
+ansible_python_interpreter=/usr/bin/python3
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+[phpweb]
+172.16.1.229
+[phpweb:vars]
 ansible_user=vagrant
 ansible_ssh_private_key_file=/home/mdadmin/Documents/STUDY/ALURA/DEVOPS/Vangrant/ambiente_dev/bionic/configs/keys/id_bionic
 ansible_python_interpreter=/usr/bin/python3
