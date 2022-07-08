@@ -6,7 +6,6 @@
         name: mysql
         state: restarted
       become: yes
-
     tasks:
     - name: 'Instala pacotes do sistema operacional'
       apt:
